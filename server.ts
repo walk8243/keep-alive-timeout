@@ -1,10 +1,7 @@
 import http from 'http';
+import { app } from './app';
 
-const server = http.createServer((req, res) => {
-	setTimeout(() => {
-		res.end('end');
-	}, 6000);
-});
+const server = http.createServer(app);
 server.keepAliveTimeout = 0;
 
 server.listen(3000);
