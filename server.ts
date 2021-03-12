@@ -1,7 +1,10 @@
 import http from 'http';
 
 const server = http.createServer((req, res) => {
-	res.end('end');
+	setTimeout(() => {
+		res.end('end');
+	}, 6000);
 });
+server.keepAliveTimeout = 0;
 
 server.listen(3000);
